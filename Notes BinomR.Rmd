@@ -1,0 +1,43 @@
+## Sampling from the Binomial Distribution
+
+We can use the **rbinom** command to do so. The general notation for a binomial/Bernouli distribution is: $X\sim B(n,P)$\
+where $n$ is the number of identical trials, or sample size, and $P$ is the specified probability.\
+\
+The **rbinom** command uses the following format:/ rbinom(n = *Total size*, size = *Sample Size*, prop = *Probability*).
+
+```{r}
+# N = 1000
+# X ~ B(15,1/3)
+# Initialize rbinom:
+y <- rbinom(n = 1000, size = 15, prob = 1/3)
+
+# Plot rbinom:
+hist(x = y, freq = FALSE,
+     xlab = 'Value',
+     ylab = 'Relative Frequency',
+     main = 'Relative Frequenct Histogram of Binomial Random Variable')
+```
+
+## Calculating Probabilities of Values of Binomial Variables
+
+To find $P(Y = y_0) = P(y_0)$, we can use the *dbinom* command./
+To find $P(Y\leq y_0)$, we can use the *pbinom* command.
+```{r}
+# Example 3.9 (1)
+# Prob = 0.05
+# n = 20
+# P(Y <= 3) (At most 3)
+pbinom(q = 3, size = 20, prob = 0.05)
+```
+
+```{r}
+# Example 3.9 (2)
+# Prob = 0.05
+# n = 3
+# P(Y = 3)
+dbinom(x = 3, size = 20, prob = 0.05)
+```
+
+
+
+
